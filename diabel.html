@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zostań moją walentynką</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #noButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img{
+            margin-top: 150px;
+        }
+
+        h1{
+            background-color: rgb(233, 183, 218);
+            width: 750px;
+
+        }
+
+        button{
+            background-color: pink;
+            border-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="kicia3.jpg" alt="kicia" width="300px" height="300px">
+        <h1>No chyba sobie żartujesz. Jeszcze raz pytam, Zostaniesz moją walentynką?</h1>
+        <button id="yesButton" onclick="showResult(true)">Tak</button>
+        <button id="noButton" onclick="moveButton()" style="margin-top: 110px; margin-left: 50px;">Nie</button>
+    </center>
+    <script>
+        function showResult(answer) {
+            if (answer) {
+                window.location.href = "hurra.html";
+            } else {
+                alert("</3>");
+            }
+        }
+
+        function moveButton() {
+            var button = document.getElementById("noButton");
+            var newX = Math.random() * window.innerWidth;
+            var newY = Math.random() * window.innerHeight;
+
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
+        }
+    </script>
+</body>
+</html>
